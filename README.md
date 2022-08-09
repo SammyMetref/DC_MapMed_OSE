@@ -71,7 +71,7 @@ To start out download the *observation* dataset (dc_obs, 1.6M) from the temporar
 wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_MapMed_OSE/dc_obs.tar.gz
 ```
 
-and the *evaluation* dataset (dc_eval, 320k) using (*this step may take several minutes*):
+and the *evaluation* dataset (dc_eval, 320k) using:
 
 ```shell
 !wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_MapMed_OSE/dc_eval.tar.gz
