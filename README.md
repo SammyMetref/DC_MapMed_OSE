@@ -65,6 +65,20 @@ They are presented with the following directory structure:
 
 ```
 
+
+To start out download the *observation* dataset (dc_obs, 1.6M) from the temporary data server, use:
+```shell
+wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_MapMed_OSE/dc_obs.tar.gz
+```
+
+and the *evaluation* dataset (dc_eval, 320k) using (*this step may take several minutes*):
+
+```shell
+!wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_MapMed_OSE/dc_eval.tar.gz
+
+```
+and then uncompress the files using `tar -xvf <file>.tar.gz`. You may also use `ftp`, `rsync` or `curl`to donwload the data.
+
 ## Baseline and evaluation
 
 ### Baseline
