@@ -1,6 +1,6 @@
-<img src="figures/DC_MapXoverMed_OSE-banner.png" />
+<img src="figures/DC_MapMed_OSE-banner.png" />
 
-# Real SSH mapping data challenge North of the Baleares
+# Real SSH mapping data challenge in Western Mediterranean
 
 This repository contains codes and sample notebooks for downloading and processing the SSH mapping data challenge.
 
@@ -9,17 +9,17 @@ The quickstart can be run online by clicking here:
 
 ## Motivation
 
-The goal is to investigate how to best reconstruct sequences of Sea Surface Height (SSH) maps from partial satellite altimetry observations. This data challenge follows an _Observation System Experiment_ framework: Satellite observations are from real sea surface height data from altimeter. The region of interest in this DC is the Mediterrannean SWOT study region (north Baleares) that will undergo intense scrutiny during the SWOT fast sampling phase. 
+The goal is to investigate how to best reconstruct sequences of Sea Surface Height (SSH) maps from partial satellite altimetry observations. This data challenge follows an _Observation System Experiment_ framework: Satellite observations are from real sea surface height data from altimeter. The region of interest in this DC is the Western Mediterrannean sea [1°E x 20°E , 30°N x 45°N].
 The practical goal of the challenge is to investigate the best mapping method according to scores described below and in Jupyter notebooks. 
 
-<img src="figures/DC_MapXoverMed_OSE-regionofinterest.png" />
+<img src="figures/DC_MaprMed_OSE-regionofinterest.png" />
 
 ### Observations
 The SSH observations include SARAL/Altika (alg), Haiyang-2B (h2b), Jason 3 (j3), Sentinel 3A (s3a), Sentinel 3B (s3b) and Cryosat-2 new orbit (c2n) altimeter data. This nadir altimeters constellation was operating and will be investigated during the 20210101-20210331 period. Note that for the mapping the Cryosat-2 new orbit altimeter data will not be considered in order to perform an independent assessment of the various reconstructions. 
 
 <p float="left">
-  <img src="figures/DC_MapXoverMed_OSE-obs4reconstruction.png" width="400" />
-  <img src="figures/DC_MapXoverMed_OSE-obs4evaluation.png" width="400" />  
+  <img src="figures/DC_MapMed_OSE-obs4reconstruction.png" width="400" />
+  <img src="figures/DC_MapMed_OSE-obs4evaluation.png" width="400" />  
 </p>
 
 
@@ -30,7 +30,7 @@ The SSH reconstructions are assessed over the period from 2021-01-15 to 2021-03-
 
 For reconstruction methods that need a spin-up, the **observations** can be used from 2016-12-01 until the beginning of the evaluation period (31 days). This spin-up period is not included in the evaluation. For reconstruction methods that need learning from full fields, the **baseline reconstruction** or **duacs reconstrcution** can be used from 2017-01-01 to 2017-12-31. The altimeter data from Cryosat-2  should never be used so that any reconstruction can be considered uncorrelated to the evaluation period.
 
-![Data Sequence](figures/DC_MapXoverMed_OSE-data_availability.png)
+![Data Sequence](figures/DC_MapMed_OSE-data_availability.png)
 
 ## Leaderboard
 
