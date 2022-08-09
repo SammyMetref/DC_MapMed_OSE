@@ -12,7 +12,7 @@ The quickstart can be run online by clicking here:
 The goal is to investigate how to best reconstruct sequences of Sea Surface Height (SSH) maps from partial satellite altimetry observations. This data challenge follows an _Observation System Experiment_ framework: Satellite observations are from real sea surface height data from altimeter. The region of interest in this DC is the Western Mediterrannean sea [1°E x 20°E , 30°N x 45°N].
 The practical goal of the challenge is to investigate the best mapping method according to scores described below and in Jupyter notebooks. 
 
-<img src="figures/DC_MaprMed_OSE-regionofinterest.png" />
+<img src="figures/DC_MapMed_OSE-regionofinterest.png" />
 
 ### Observations
 The SSH observations include SARAL/Altika (alg), Haiyang-2B (h2b), Jason 3 (j3), Sentinel 3A (s3a), Sentinel 3B (s3b) and Cryosat-2 new orbit (c2n) altimeter data. This nadir altimeters constellation was operating and will be investigated during the 20210101-20210331 period. Note that for the mapping the Cryosat-2 new orbit altimeter data will not be considered in order to perform an independent assessment of the various reconstructions. 
@@ -53,15 +53,15 @@ They are presented with the following directory structure:
 ```
 . 
 |-- dc_obs
-|   |-- dt_xovermed_alg_phy_l3_20210101-20210331_1-2_40-2.nc
-|   |-- dt_xovermed_h2b_phy_l3_20210101-20210331_1-2_40-2.nc
-|   |-- dt_xovermed_j3_phy_l3_20210101-20210331_1-2_40-2.nc
-|   |-- dt_xovermed_s3a_phy_l3_20210101-20210331_1-2_40-2.nc
-|   |-- dt_xovermed_s3b_phy_l3_20210101-20210331_1-2_40-2.nc 
+|   |-- dt_med_alg_phy_l3_20210101-20210331_1-2_40-2.nc
+|   |-- dt_med_h2b_phy_l3_20210101-20210331_1-2_40-2.nc
+|   |-- dt_med_j3_phy_l3_20210101-20210331_1-2_40-2.nc
+|   |-- dt_med_s3a_phy_l3_20210101-20210331_1-2_40-2.nc
+|   |-- dt_med_s3b_phy_l3_20210101-20210331_1-2_40-2.nc 
  
 
 |-- dc_eval
-|   |-- dt_xovermed_c2n_phy_l3_20210101-20210331_1-2_40-2.nc
+|   |-- dt_med_c2n_phy_l3_20210101-20210331_1-2_40-2.nc
 
 ```
 
