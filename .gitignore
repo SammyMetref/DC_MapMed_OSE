@@ -1,0 +1,4 @@
+# ignoring results and inputs directories
+/results/
+/inputs/dc_obs
+/inputs/dc_eval

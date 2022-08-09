@@ -1,0 +1,83 @@
+<img src="figures/DC_MapXoverMed_OSE-banner.png" />
+
+# Real SSH mapping data challenge North of the Baleares
+
+This repository contains codes and sample notebooks for downloading and processing the SSH mapping data challenge.
+
+The quickstart can be run online by clicking here:
+
+
+## Motivation
+
+The goal is to investigate how to best reconstruct sequences of Sea Surface Height (SSH) maps from partial satellite altimetry observations. This data challenge follows an _Observation System Experiment_ framework: Satellite observations are from real sea surface height data from altimeter. The region of interest in this DC is the Mediterrannean SWOT study region (north Baleares) that will undergo intense scrutiny during the SWOT fast sampling phase. 
+The practical goal of the challenge is to investigate the best mapping method according to scores described below and in Jupyter notebooks. 
+
+<img src="figures/DC_MapXoverMed_OSE-regionofinterest.png" />
+
+### Observations
+The SSH observations include SARAL/Altika (alg), Haiyang-2B (h2b), Jason 3 (j3), Sentinel 3A (s3a), Sentinel 3B (s3b) and Cryosat-2 new orbit (c2n) altimeter data. This nadir altimeters constellation was operating and will be investigated during the 20210101-20210331 period. Note that for the mapping the Cryosat-2 new orbit altimeter data will not be considered in order to perform an independent assessment of the various reconstructions. 
+
+<p float="left">
+  <img src="figures/DC_MapXoverMed_OSE-obs4reconstruction.png" width="400" />
+  <img src="figures/DC_MapXoverMed_OSE-obs4evaluation.png" width="400" />  
+</p>
+
+
+
+### Data sequence and use
+ 
+The SSH reconstructions are assessed over the period from 2021-01-15 to 2021-03-15.
+
+For reconstruction methods that need a spin-up, the **observations** can be used from 2016-12-01 until the beginning of the evaluation period (31 days). This spin-up period is not included in the evaluation. For reconstruction methods that need learning from full fields, the **baseline reconstruction** or **duacs reconstrcution** can be used from 2017-01-01 to 2017-12-31. The altimeter data from Cryosat-2  should never be used so that any reconstruction can be considered uncorrelated to the evaluation period.
+
+![Data Sequence](figures/DC_MapXoverMed_OSE-data_availability.png)
+
+## Leaderboard
+
+| Method   |   µ(RMSE)  |   σ(RMSE) |   λx (km) | Notes             | Reference                |
+|:---------|-----------:|----------:|----------:|:------------------|:-------------------------|
+| BASELINE |   |  |   | Covariances BASELINE OI |   | 
+
+
+**µ(RMSE)**: average RMSE score.  
+**σ(RMSE)**: standard deviation of the RMSE score.  
+**λx**: minimum spatial scale resolved.   
+ 
+## Quick start
+You can follow the quickstart guide in this notebook or launch it directly from  .
+
+## Download the data
+The data are hosted on the opendap: [here](https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/catalog/meomopendap/extract/ocean-data-challenges/dc_data1/catalog.html). 
+They are presented with the following directory structure:
+
+```
+. 
+|-- dc_obs
+|   |-- dt_xovermed_alg_phy_l3_20210101-20210331_1-2_40-2.nc
+|   |-- dt_xovermed_h2b_phy_l3_20210101-20210331_1-2_40-2.nc
+|   |-- dt_xovermed_j3_phy_l3_20210101-20210331_1-2_40-2.nc
+|   |-- dt_xovermed_s3a_phy_l3_20210101-20210331_1-2_40-2.nc
+|   |-- dt_xovermed_s3b_phy_l3_20210101-20210331_1-2_40-2.nc 
+ 
+
+|-- dc_eval
+|   |-- dt_xovermed_c2n_phy_l3_20210101-20210331_1-2_40-2.nc
+
+```
+
+## Baseline and evaluation
+
+### Baseline
+The baseline mapping method is optimal interpolation (OI), in the spirit of the present-day standard for DUACS products provided by AVISO. OI is implemented in the [`baseline_oi`](https://github.com/ocean-data-challenges/2021a_SSH_mapping_OSE/blob/master/notebooks/baseline_oi.ipynb) Jupyter notebook. The SSH reconstructions are saved as a NetCDF file in the `results` directory. The content of this directory is git-ignored.
+   
+### Evaluation
+
+The evaluation of the mapping methods is based on the comparison of the SSH reconstructions with the *independent* Cryosat-2 along-track dataset. It includes two scores, one based on the Root-Mean-Square Error (RMSE), the other based on Fourier wavenumber spectra. The evaluation notebook [`example_data_eval`](https://github.com/ocean-data-challenges/2020a_SSH_mapping_NATL60/blob/master/notebooks/example_data_eval.ipynb) implements the computation of these two scores as they could appear in the leaderboard. The notebook also provides additional, graphical diagnostics based on RMSE and spectra.
+
+## Data processing
+
+Cross-functional modules are gathered in the `src` directory. They include tools for regridding, plots, evaluation, writing and reading NetCDF files. The directory also contains a module that implements the baseline method.  
+
+## Acknowledgement
+
+The structure of this data challenge was to a large extent inspired by the second ocean-data-challenge created for the BOOST-SWOT ANR project in collaboration with the MEOM team at IGE lab, CLS and IMT Atlantic: [`2021a_SSH_mapping_OSE`](https://github.com/ocean-data-challenges/2021a_SSH_mapping_OSE).
