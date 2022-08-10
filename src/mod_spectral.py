@@ -116,6 +116,7 @@ def compute_spectral_scores(time_alongtrack,
     global_wavenumber, global_psd_ref = scipy.signal.welch(np.asarray(ref_segment).flatten(),
                                                            fs=1.0 / delta_x,
                                                            nperseg=npt,
+                                                           detrend=False,
                                                            scaling='density',
                                                            noverlap=0)
 
@@ -123,6 +124,7 @@ def compute_spectral_scores(time_alongtrack,
     _, global_psd_study = scipy.signal.welch(np.asarray(study_segment).flatten(),
                                              fs=1.0 / delta_x,
                                              nperseg=npt,
+                                             detrend=False,
                                              scaling='density',
                                              noverlap=0)
 
@@ -130,6 +132,7 @@ def compute_spectral_scores(time_alongtrack,
     _, global_psd_diff = scipy.signal.welch(np.asarray(study_segment).flatten()-np.asarray(ref_segment).flatten(),
                                             fs=1.0 / delta_x,
                                             nperseg=npt,
+                                            detrend=False,
                                             scaling='density',
                                             noverlap=0)
      

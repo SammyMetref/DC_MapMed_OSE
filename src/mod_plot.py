@@ -25,7 +25,7 @@ def plot_psd_score(filename):
     
     ds = xr.open_dataset(filename)
     
-    #resolved_scale = find_wavelength_05_crossing(filename)
+    resolved_scale = find_wavelength_05_crossing(filename)
     
     plt.figure(figsize=(10, 5))
     ax = plt.subplot(121)
