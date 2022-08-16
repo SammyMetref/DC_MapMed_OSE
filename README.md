@@ -17,6 +17,8 @@ The practical goal of the challenge is to investigate the best mapping method ac
 ### Observations
 The SSH observations include SARAL/Altika (alg), Haiyang-2B (h2b), Jason 3 (j3), Sentinel 3A (s3a), Sentinel 3B (s3b) and Cryosat-2 new orbit (c2n) altimeter data. This nadir altimeters constellation was operating and will be investigated during the 20210101-20210331 period. Note that for the mapping the Cryosat-2 new orbit altimeter data will not be considered in order to perform an independent assessment of the various reconstructions. 
 
+The observations (for reconstruction and for evaluation) are hosted on the meom-opendap server available for download: see **Download the data** section below.
+
 <p float="left">
   <img src="figures/DC_MapMed_OSE-obs4reconstruction.png" width="400" />
   <img src="figures/DC_MapMed_OSE-obs4evaluation.png" width="400" />  
@@ -49,7 +51,7 @@ The altimeter data from Cryosat-2  should never be used so that any reconstructi
 You can follow the quickstart guide in this notebook or launch it directly from  .
 
 ## Download the data
-The data are hosted on the opendap: [here](https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/catalog/meomopendap/extract/ocean-data-challenges/dc_data1/catalog.html). 
+The data are hosted on the opendap: [ocean-data-challenges/dc_MapMed_OSE/](https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/catalog/meomopendap/extract/ocean-data-challenges/dc_MapMed_OSE/catalog.html). 
 They are presented with the following directory structure:
 
 ```
