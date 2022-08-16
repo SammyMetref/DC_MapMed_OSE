@@ -28,7 +28,9 @@ The SSH observations include SARAL/Altika (alg), Haiyang-2B (h2b), Jason 3 (j3),
  
 The SSH reconstructions are assessed over the period from 2021-01-15 to 2021-03-15.
 
-For reconstruction methods that need a spin-up, the **observations** can be used from 2016-12-01 until the beginning of the evaluation period (31 days). This spin-up period is not included in the evaluation. For reconstruction methods that need learning from full fields, the **baseline reconstruction** or **duacs reconstrcution** can be used from 2017-01-01 to 2017-12-31. The altimeter data from Cryosat-2  should never be used so that any reconstruction can be considered uncorrelated to the evaluation period.
+For reconstruction methods that need a spin-up or training, the **observations** can be used during the 15 first and the 15 last days before and after the two-month evaluation period. Note also that any other Nadir satellite observations available outside of the evaluation period can be used and are found on the CMEMS website. 
+The evaluation is performed within the geographical box: [2°E x 19°E , 31°N x 44°N] so to avoid potential boundary issues which is a topic left for an other challenge.  
+The altimeter data from Cryosat-2  should never be used so that any reconstruction can be considered uncorrelated to the evaluation period.
 
 ![Data Sequence](figures/DC_MapMed_OSE-data_availability.png)
 
