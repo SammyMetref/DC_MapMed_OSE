@@ -62,7 +62,16 @@ def read_l4_dataset(list_of_file,
     y_axis = pyinterp.Axis(ds["lat"][:])
     z_axis = pyinterp.TemporalAxis(ds["time"][:])
     
-    var = ds['sla'][:]
+    if True:
+        var = ds['ssh'][:]
+    else: 
+        mdt = xr.open_dataset('../inputs/dc_obs/dt_med_mdt_phy_l4_0.5-20.0_29-45.nc')
+
+        # mdt = xr.open_dataset(mdt_file)
+        mdt_interp = mdt.interp(lon=ds.lon, lat=ds.lat)
+
+        var = ds['ssh'] - mdt_interp['mdt']
+    
     var = var.transpose('lon', 'lat', 'time')
 
     # The undefined values must be set to nan.
