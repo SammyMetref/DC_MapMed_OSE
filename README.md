@@ -2,7 +2,7 @@
 
 # Real SSH mapping data challenge in the Western Mediterranean Sea
 
-A challenge on mapping real altimetric in the Western Mediterranean Sea created by Datlas and MEOM-IGE.
+A challenge on mapping real altimetric data in the Western Mediterranean Sea created by Datlas and MEOM-IGE.
 
 <img src="figures/DC_MapMed_OSE-banner.png" />
 
@@ -41,12 +41,10 @@ The altimeter data from Cryosat-2  should never be used so that any reconstructi
 ![Data Sequence](figures/DC_MapMed_OSE-data_availability.png)
 
 
-## Baseline and evaluation
-
-### Baseline
+## Baseline 
 The baseline mapping method is optimal interpolation (OI), in the spirit of the present-day standard for DUACS products provided by AVISO. OI is implemented in the [`baseline_oi`](https://github.com/ocean-data-challenges/2021a_SSH_mapping_OSE/blob/master/notebooks/baseline_oi.ipynb) Jupyter notebook. The SSH reconstructions are saved as a NetCDF file in the `results` directory. The content of this directory is git-ignored.
    
-### Evaluation
+## Evaluation
 
 The evaluation of the mapping methods is based on the comparison of the SSH reconstructions with the *independent* Cryosat-2 along-track dataset. It includes two scores, one based on the Root-Mean-Square Error (RMSE), the other based on Fourier wavenumber spectra. The evaluation notebook [`example_data_eval`](https://github.com/ocean-data-challenges/2020a_SSH_mapping_NATL60/blob/master/notebooks/example_data_eval.ipynb) implements the computation of these two scores as they could appear in the leaderboard. The notebook also provides additional, graphical diagnostics based on RMSE and spectra.
 
@@ -60,7 +58,7 @@ Clone the data challenge repo:
 ```
 git clone https://github.com/ocean-data-challenges/DC_MapMed_OSE.git
 ```
-create the data challenge conda environment, named env-dc-swot-filtering, by running the following command:
+create the data challenge conda environment, named env-dc-mapmed-ose, by running the following command:
 ```
 conda env create --file=environment.yml 
 ```
@@ -101,13 +99,13 @@ They are presented with the following directory structure:
 
 To start out download the *observation* dataset (dc_obs, 1.6M) from the temporary data server, use:
 ```shell
-wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_MapMed_OSE/dc_obs.tar.gz
+!wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_MapMed_OSE/dc_obs.tar.gz inputs/
 ```
 
 and the *evaluation* dataset (dc_eval, 320k) using:
 
 ```shell
-!wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_MapMed_OSE/dc_eval.tar.gz
+!wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_MapMed_OSE/dc_eval.tar.gz inputs/
 
 ```
 and then uncompress the files using `tar -xvf <file>.tar.gz`. You may also use `ftp`, `rsync` or `curl`to donwload the data.
