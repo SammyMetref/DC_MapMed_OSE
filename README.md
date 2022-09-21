@@ -2,7 +2,7 @@
 
 # Real SSH mapping data challenge in the Western Mediterranean Sea
 
-A challenge on mapping real altimetric data in the Western Mediterranean Sea created by Datlas and MEOM-IGE.
+A challenge on mapping real altimetric data in the Mediterranean Sea created by Datlas and MEOM-IGE.
 
 <img src="figures/DC_MapMed_OSE-banner.png" />
 
