@@ -60,7 +60,7 @@ def read_l4_dataset(list_of_file,
     
     x_axis = pyinterp.Axis(ds["lon"][:]%360., is_circle=is_circle)
     y_axis = pyinterp.Axis(ds["lat"][:])
-    z_axis = pyinterp.TemporalAxis(ds["time"][:])
+    z_axis = pyinterp.TemporalAxis(np.array(ds["time"][:]))
     
     if True:
         var = ds['ssh'][:]

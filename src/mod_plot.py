@@ -7,7 +7,7 @@ import hvplot.xarray
 import cartopy.crs as ccrs
 from matplotlib.patches import Rectangle
 
-def find_wavelength_05_crossing(filename):
+def find_wavelength_05_crossing_old(filename):
     
     ds = xr.open_dataset(filename)
     y = 1./ds.wavenumber
@@ -19,6 +19,39 @@ def find_wavelength_05_crossing(filename):
     
     return ynew
     
+    
+def find_wavelength_05_crossing(filename):
+    
+    ds = xr.open_dataset(filename)
+    y = ds.wavenumber
+    x = (1. - ds.psd_diff/ds.psd_ref) 
+    
+    thresh=0.5
+      
+    #xtmp = x[1:]
+    #for i in range(1,np.size(xtmp)):  
+    #    imin = np.argmin(np.abs(xtmp[:i] - thresh).values)
+    #    if imin !=i-1 and xtmp[imin]<thresh : 
+    #        break
+    #imin = imin + 1 
+    xtmp = list()
+    ytmp = list()
+    for i in range(np.size(x)):
+        xtmp.append(x[i])
+        ytmp.append(y[i])
+        if x[i]<thresh and np.isnan(y[i]): 
+            break
+        
+    xtmp = np.array(xtmp)
+    ytmp = np.array(ytmp)
+
+    #f = interpolate.interp1d(x[imin-1:imin+2],y[imin-1:imin+2])
+    f = interpolate.interp1d(xtmp,ytmp)
+ 
+    xnew = thresh
+    ynew = f(xnew)
+
+    return 1/ynew
     
 
 def plot_psd_score(filename):

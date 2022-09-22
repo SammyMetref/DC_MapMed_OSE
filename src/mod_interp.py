@@ -46,7 +46,7 @@ def interp_on_alongtrack(gridded_dataset,
                                          z_axis.safe_cast(ds_alongtrack.time.values),
                                          bounds_error=False).reshape(ds_alongtrack["longitude"].values.shape)
     
-    ssh_alongtrack = (ds_alongtrack["sla_unfiltered"]).values# + ds_alongtrack["mdt"]).values
+    ssh_alongtrack = (ds_alongtrack["sla_unfiltered"] + ds_alongtrack["mdt"]).values
     lon_alongtrack = ds_alongtrack["longitude"].values
     lat_alongtrack = ds_alongtrack["latitude"].values
     time_alongtrack = ds_alongtrack["time"].values
