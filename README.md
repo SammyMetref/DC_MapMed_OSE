@@ -65,7 +65,7 @@ conda env create --file=environment.yml
 and activate it with:
 
 ```
-conda activate env-dc-swot-filtering
+conda activate env-dc-mapmed-ose
 ```
 then add it to the available kernels for jupyter to see: 
 ```
