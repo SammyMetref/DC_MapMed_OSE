@@ -120,12 +120,9 @@ You can follow the quickstart guide in this notebook: [quickstart](quickstart.ip
 
 | Method   |   µ(RMSE)  |   σ(RMSE) |   λx (km) | Notes             | Reference                |
 |:---------|-----------:|----------:|----------:|:------------------|:-------------------------|
-| BASELINE |  0.632793  |  0.249065 |    149    | Covariances BASELINE OI | evaluate_baseline_oi.ipynb  | 
-|:---------|-----------:|----------:|----------:|:------------------|:-------------------------|
-| BASELINE |  0.720857  |  0.0941839 |   125     | BFN-QG without coasts | evaluate_BFNQG.ipynb  | 
-|:---------|-----------:|----------:|----------:|:------------------|:-------------------------|
-| BASELINE |  0.759956  |  0.0877991 |   118    | WaveVar | evaluate_WaveVar.ipynb  | 
-|:---------|-----------:|----------:|----------:|:------------------|:-------------------------|
+| BASELINE |  0.632793  |  0.249065 |    149    | Covariances BASELINE OI | evaluate_baseline_oi.ipynb  |  
+| BASELINE |  0.720857  |  0.0941839 |   125     | BFN-QG without coasts | evaluate_BFNQG.ipynb  |  
+| BASELINE |  0.759956  |  0.0877991 |   118    | WaveVar | evaluate_WaveVar.ipynb  |  
    
 
 **µ(RMSE)**: average RMSE score.  
