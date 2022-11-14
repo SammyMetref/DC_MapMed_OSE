@@ -122,7 +122,7 @@ You can follow the quickstart guide in this notebook: [quickstart](quickstart.ip
 |:------------|-----------:|----------:|----------:|:---------------------------------------|:----------------------------|
 | BASELINE OI |  0.632793  | 0.249065  |   149    | Covariances BASELINE OI                 | evaluate_baseline_oi.ipynb  |  
 | BFN-QG      |  0.720857  | 0.0941839 |   125    | BFN-QG without coasts (open QG pool)    | evaluate_BFNQG.ipynb        |  
-| BFNQG_coast |  0.631138  | 0.0987491 |   130    | BFN-QG with coasts (Dirichlet cond.)    | evaluate_BFNQG_coast.ipynb  |  
+| BFNQG_coast |  0.724554  | 0.0933299 |   125    | BFN-QG with coasts (Dirichlet cond.)    | evaluate_BFNQG_coast.ipynb  |  
 | **WaveVar** |**0.759956**| 0.0877991 | **118**  | Implemented from Ubelmann et al. (2021) | evaluate_WaveVar.ipynb      |  
    
 

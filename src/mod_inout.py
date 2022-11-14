@@ -70,7 +70,7 @@ def read_l4_dataset(list_of_file,
         # mdt = xr.open_dataset(mdt_file)
         mdt_interp = mdt.interp(lon=ds.lon, lat=ds.lat)
 
-        var = ds['ssh'] - mdt_interp['mdt']
+        var = ds['ssh'] + mdt_interp['mdt']
     
     var = var.transpose('lon', 'lat', 'time')
 
