@@ -89,13 +89,21 @@ They are presented with the following directory structure:
 |   |-- dt_med_j3_phy_l3_20210101-20210331_1-2_40-2.nc
 |   |-- dt_med_s3a_phy_l3_20210101-20210331_1-2_40-2.nc
 |   |-- dt_med_s3b_phy_l3_20210101-20210331_1-2_40-2.nc 
+|   |-- dt_med_mdt_phy_l4_nrt_0.5-20.0_29-45.nc 
  
+```
+containing the data from 5 nadir altimeters (alg, h2b, j3, s3a and s3B) and the gridded MDT map (also available along track in the nadir netcdf files) if needed for reconstruction.  
 
+
+
+```
+. 
 |-- dc_eval
 |   |-- dt_med_c2n_phy_l3_20210101-20210331_1-2_40-2.nc
 
 ```
 
+containing the data from c2n nadir altimeter that is only available for the evaluation and **must not be used in the reconstruction**.
 
 To start out download the *observation* dataset (dc_obs, 1.6M) from the temporary data server, use:
 ```shell
