@@ -56,8 +56,13 @@ The evaluation of the mapping methods is based on the comparison of the SSH reco
 
 Clone the data challenge repo: 
 ```
+git clone https://github.com/ocean-data-challenges/DC_MapMed_OSE.git
+```
+or 
+```
 git clone git@github.com:SammyMetref/DC_MapMed_OSE.git
 ```
+
 create the data challenge conda environment, named env-dc-mapmed-ose, by running the following command:
 ```
 conda env create --file=environment.yml 
@@ -105,19 +110,21 @@ containing the data from 5 nadir altimeters (alg, h2b, j3, s3a and s3B) and the 
 
 containing the data from c2n nadir altimeter that is only available for the evaluation and **must not be used in the reconstruction**.
 
-To start out download the *observation* dataset (dc_obs, 1.6M) from the temporary data server, use:
+To start out you can download the *observation* dataset (dc_obs, 1.6M) from the temporary data server, with:
 ```shell
-!wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_MapMed_OSE/dc_obs.tar.gz inputs/
+wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_MapMed_OSE/dc_obs.tar.gz 
 ```
 
 and the *evaluation* dataset (dc_eval, 320k) using:
 
 ```shell
-!wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_MapMed_OSE/dc_eval.tar.gz inputs/
+wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_MapMed_OSE/dc_eval.tar.gz
 
 ```
 and then uncompress the files using `tar -xvf <file>.tar.gz`. You may also use `ftp`, `rsync` or `curl`to donwload the data.
 
+
+**Check the demo notebooks to see how to download the data in a jupyter notebook!**
 
  
 ## Quick start
