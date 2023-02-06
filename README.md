@@ -56,7 +56,7 @@ The evaluation of the mapping methods is based on the comparison of the SSH reco
 
 Clone the data challenge repo: 
 ```
-git clone https://github.com/ocean-data-challenges/DC_MapMed_OSE.git
+git clone git@github.com:SammyMetref/DC_MapMed_OSE.git
 ```
 create the data challenge conda environment, named env-dc-mapmed-ose, by running the following command:
 ```
@@ -128,7 +128,7 @@ You can follow the quickstart guide in this notebook: [quickstart](quickstart.ip
 
 | Method      |   µ(RMSE)  |   σ(RMSE) |   λx (km) | Notes                                  | Reference                   |
 |:------------|-----------:|----------:|----------:|:---------------------------------------|:----------------------------|
-| BASELINE OI |  0.632793  | 0.249065  |   149    | Covariances BASELINE OI                 | evaluate_baseline_oi.ipynb  |  
+| BASELINE OI |  0.674136  | 0.111694  |   148    | Covariances BASELINE OI                 | evaluate_baseline_oi.ipynb  |  
 | BFN-QG      |  0.720857  | 0.0941839 |   125    | BFN-QG without coasts (open QG pool)    | evaluate_BFNQG.ipynb        |  
 | BFNQG_coast |  0.724554  | 0.0933299 |   125    | BFN-QG with coasts (Dirichlet cond.)    | evaluate_BFNQG_coast.ipynb  |  
 | **WaveVar** |**0.759956**| 0.0877991 | **118**  | Implemented from Ubelmann et al. (2021) | evaluate_WaveVar.ipynb      |  
