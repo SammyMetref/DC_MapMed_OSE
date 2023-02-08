@@ -50,7 +50,8 @@ def read_l4_dataset(list_of_file,
                     lat_max=90., 
                     time_min='1900-10-01', 
                     time_max='2100-01-01', 
-                    is_circle=True):
+                    is_circle=True,
+                    issla=False):
     
     
     ds = xr.open_mfdataset(list_of_file, concat_dim ='time', combine='nested', parallel=True)
@@ -61,16 +62,16 @@ def read_l4_dataset(list_of_file,
     x_axis = pyinterp.Axis(ds["lon"][:]%360., is_circle=is_circle)
     y_axis = pyinterp.Axis(ds["lat"][:])
     z_axis = pyinterp.TemporalAxis(np.array(ds["time"][:]))
-    
-    if True:
-        var = ds['ssh'][:]
-    else: 
-        mdt = xr.open_dataset('../inputs/dc_obs/dt_med_mdt_phy_l4_0.5-20.0_29-45.nc')
+     
+    if not issla:   
 
-        # mdt = xr.open_dataset(mdt_file)
+        var = ds['ssh']  
+    else:  
+        mdt = xr.open_dataset('../inputs/dc_obs/dt_med_mdt_phy_l4_nrt_0.5-20.0_29-45.nc') 
+ 
         mdt_interp = mdt.interp(lon=ds.lon, lat=ds.lat)
 
-        var = ds['ssh'] + mdt_interp['mdt']
+        var = ds['sla'] + mdt_interp['mdt']
     
     var = var.transpose('lon', 'lat', 'time')
 
